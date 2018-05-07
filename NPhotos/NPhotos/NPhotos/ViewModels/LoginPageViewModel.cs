@@ -1,17 +1,12 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Prism.Navigation;
 
 namespace NPhotos.ViewModels
 {
-	public class LoginPageViewModel : ViewModelBase
+    public class LoginPageViewModel : ViewModelBase
 	{
         public LoginPageViewModel(INavigationService navigationService) :base(navigationService)
         {
-            Title = "Login Page";
+            //Title = "Login Page";
         }
 	}
 }

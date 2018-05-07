@@ -14,7 +14,8 @@ namespace NPhotos.Views
 
         async void SignInwithGoogle(object o, EventArgs eventArg)
         {
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PushAsync(new GoogleProfileCsPage());
+           // await Navigation.PushAsync(new HomePage());
             Navigation.RemovePage(this);
         }
     }

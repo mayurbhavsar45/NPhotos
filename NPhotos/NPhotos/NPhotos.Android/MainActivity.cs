@@ -23,13 +23,13 @@ namespace NPhotos.Droid
             Window.SetStatusBarColor(this.Resources.GetColor(Resource.Color.appMajorColor));
         }
 
-        public override void OnBackPressed()
+       /* public override void OnBackPressed()
         {
             if (_app.DoBack())
             {
                 base.OnBackPressed();
             }
-        }
+        } */
     }
 
     public class AndroidInitializer : IPlatformInitializer
