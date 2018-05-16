@@ -15,9 +15,9 @@ namespace NPhotos.Services
         /// Create a new app and get new creadentials: 
         /// https://console.developers.google.com/apis/
         /// </summary>
-        public static readonly string ClientId = "250769118368-16no493rn1t2peo8af9k6bfi9vo3lejr.apps.googleusercontent.com";
-        public static readonly string ClientSecret = "a20VJFFvLZK6Hj7v5bQFaKf0";
-        public static readonly string RedirectUri = "https://www.youtube.com/c/HoussemDellai/";
+        public static readonly string ClientId = "33147413996-1v68mj9nlssj7seoqdqf40v81rbffare.apps.googleusercontent.com";
+        public static readonly string ClientSecret = "3Q2Lk-ErZlceEJmAt1oTfb2M";
+        public static readonly string RedirectUri = "https://www.youtube.com/watch?v=OX-h7MtkeOI:/oauth2redirect";
 
         public async Task<string> GetAccessTokenAsync(string code)
         {

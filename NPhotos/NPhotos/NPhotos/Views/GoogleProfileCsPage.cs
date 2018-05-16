@@ -1,133 +1,94 @@
-﻿using NPhotos.Models;
-using NPhotos.Services;
+﻿using Newtonsoft.Json;
+using NPhotos.Helper;
+using NPhotos.Models;
 using NPhotos.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace NPhotos.Views
 {
-	public class GoogleProfileCsPage : ContentPage
+    public class GoogleProfileCsPage : ContentPage
 	{
+        Account account;
+        AccountStore store;
         private readonly GoogleViewModel _googleViewModel = new GoogleViewModel();
         public GoogleProfileCsPage ()
 		{
+
             BindingContext = _googleViewModel;
 
             Title = "Google Profile";
             BackgroundColor = Color.White;
+            store = AccountStore.Create();
+            account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
+         
+            var authenticator = new OAuth2Authenticator(
+                Constants.AndroidClientId,
+                null,
+                Constants.Scope,
+                new Uri(Constants.AuthorizeUrl),
+                new Uri(Constants.AndroidRedirectUrl),
+                new Uri(Constants.AccessTokenUrl),
+                null,
+                true);
+          
+            authenticator.Completed += OnAuthCompleted;
+            authenticator.Error += OnAuthError;
 
-            var authRequest =
-                  "https://accounts.google.com/o/oauth2/v2/auth"
-                  + "?response_type=code"
-                  + "&scope=openid"
-                  + "&redirect_uri=" + GoogleServices.RedirectUri
-                  + "&client_id=" + GoogleServices.ClientId;
+            AuthenticationState.Authenticator = authenticator;
 
-            var webView = new WebView
-            {
-                Source = authRequest,
-                HeightRequest = 1
-            };
-
-            webView.Navigated += WebViewOnNavigated;
-
-            Content = webView;
+            var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            presenter.Login(authenticator);
         }
 
-        private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
+        private void OnAuthError(object sender, AuthenticatorErrorEventArgs e)
         {
-            var code = ExtractCodeFromUrl(e.Url);
-
-            if (code != "")
-            {
-
-                var accessToken = await _googleViewModel.GetAccessTokenAsync(code);
-
-                await _googleViewModel.SetGoogleUserProfileAsync(accessToken);
-
-                SetPageContent(_googleViewModel.GoogleProfile);
-            }
+            //throw new NotImplementedException();
         }
-        private string ExtractCodeFromUrl(string url)
+
+        private async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
         {
-            if (url.Contains("code="))
+            var authenticator = sender as OAuth2Authenticator;
+            if (authenticator != null)
             {
-                var attributes = url.Split('&');
-
-                var code = attributes.FirstOrDefault(s => s.Contains("code=")).Split('=')[1];
-
-                return code;
+                authenticator.Completed -= OnAuthCompleted;
+                authenticator.Error -= OnAuthError;
             }
 
-            return string.Empty;
-        }
-
-        private void SetPageContent(GoogleProfile googleProfile)
-        {
-            Content = new StackLayout
+            User user = null;
+            if (e.IsAuthenticated)
             {
-                Orientation = StackOrientation.Vertical,
-                Padding = new Thickness(8, 30),
-                Children =
-                {
-                    new Label
-                    {
-                        Text = googleProfile.DisplayName,
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = googleProfile.Id,
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = googleProfile.Verified.ToString(),
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = googleProfile.Gender,
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = googleProfile.Tagline,
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = googleProfile.CircledByCount.ToString(),
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = googleProfile.Occupation,
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Xamarin.Forms.Image
-                    {
-                         Source = googleProfile.Image.Url,
-                         HeightRequest = 100
-                    },
-                     new Xamarin.Forms.Image
-                    {
-                         Source = googleProfile.Cover.CoverPhoto.Url,
-                         HeightRequest = 100
-                    },
+               
+                // If the user is authenticated, request their basic user data from Google
+                // UserInfoUrl = https://www.googleapis.com/oauth2/v2/userinfo
+                var request = new OAuth2Request("GET", new Uri(Constants.UserInfoUrl), null, e.Account);
+                var response = await request.GetResponseAsync();
+                if (response != null)
+                {                 
+                    TokenResponse.access_token= e.Account.Properties["access_token"];
+                    TokenResponse.token_type = e.Account.Properties["token_type"];
+                    TokenResponse.expires_in = e.Account.Properties["expires_in"];
+                    TokenResponse.refresh_token = e.Account.Properties["refresh_token"];
+                    TokenResponse.id_token = e.Account.Properties["id_token"];
+
+                    string userJson = await response.GetResponseTextAsync();
+                    user = JsonConvert.DeserializeObject<User>(userJson);           
                 }
-            };
+
+                if (account != null)
+                {
+                    store.Delete(account, Constants.AppName);
+                }
+         
+                await store.SaveAsync(account = e.Account, Constants.AppName);
+                NavigationPage navigationPage = new NavigationPage();
+                await navigationPage.PushAsync(new HomePage());
+            }
         }
+
+      
     }
 }

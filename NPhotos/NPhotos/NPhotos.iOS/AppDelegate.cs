@@ -1,6 +1,8 @@
 ﻿using Foundation;
+using NPhotos.Helper;
 using Prism;
 using Prism.Ioc;
+using System;
 using UIKit;
 
 
@@ -12,13 +14,7 @@ namespace NPhotos.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
-        //
-        // This method is invoked when the application has loaded and is ready to run. In this 
-        // method you should instantiate the window, load the UI into it and then make the window
-        // visible.
-        //
-        // You have 17 seconds to return from this method, or iOS will terminate your application.
-        //
+     
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
@@ -26,8 +22,19 @@ namespace NPhotos.iOS
 
             return base.FinishedLaunching(app, options);
         }
-    }
 
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            // Convert NSUrl to Uri
+            var uri = new Uri(url.AbsoluteString);
+
+            // Load redirectUrl page
+            AuthenticationState.Authenticator.OnPageLoading(uri);
+
+            return true;
+        }
+    }
+   
     public class iOSInitializer : IPlatformInitializer
     {
         public void RegisterTypes(IContainerRegistry container)

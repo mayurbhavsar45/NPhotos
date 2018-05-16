@@ -5,6 +5,8 @@ using NPhotos.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Unity;
+using System;
+using System.Diagnostics;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NPhotos
@@ -18,7 +20,10 @@ namespace NPhotos
 */
         public App() : this(null) { }
 
-        public App(IPlatformInitializer initializer) : base(initializer) { }
+        public App(IPlatformInitializer initializer) : base(initializer)
+        {
+
+        }
 
         protected override async void OnInitialized()
         {
@@ -32,6 +37,7 @@ namespace NPhotos
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage>();
             containerRegistry.RegisterForNavigation<HomePage>();
+            
         }
 
         public bool DoBack()
