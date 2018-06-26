@@ -29,6 +29,7 @@ namespace NPhotos.ViewModels
         {
             _googleServices = new GoogleServices();
         }
+
         public async Task<string> GetAccessTokenAsync(string code)
         {
 

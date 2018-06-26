@@ -1,0 +1,13 @@
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/bin/Debug/netstandard2.0/NPhotos.deps.json
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/bin/Debug/netstandard2.0/NPhotos.dll
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/bin/Debug/netstandard2.0/NPhotos.pdb
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/NPhotos.csprojResolveAssemblyReference.cache
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/NPhotos.csproj.CoreCompileInputs.cache
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/NPhotos.AssemblyInfoInputs.cache
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/NPhotos.AssemblyInfo.cs
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/NPhotos.dll
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/NPhotos.pdb
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/Views/HomePage.xaml.g.cs
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/Views/LoginPage.xaml.g.cs
+/Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/obj/Debug/netstandard2.0/XamlC.stamp

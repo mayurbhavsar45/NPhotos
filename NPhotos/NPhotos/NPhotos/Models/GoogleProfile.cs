@@ -23,6 +23,8 @@ namespace NPhotos.Models
         public int CircledByCount { get; set; }
         public bool Verified { get; set; }
         public Cover Cover { get; set; }
+        public string Email { get; set; }
+        public Uri Picture { get; set; }
     }
 
     public class Name

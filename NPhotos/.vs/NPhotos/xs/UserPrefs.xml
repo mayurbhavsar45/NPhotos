@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{5DDF3468-B32F-49C0-AD76-B05A5DE3AC24}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NPhotos/NPhotos/Views/GoogleProfileCsPage.cs">
+    <Files>
+      <File FileName="NPhotos/NPhotos.iOS/AppDelegate.cs" Line="26" Column="10" />
+      <File FileName="NPhotos/NPhotos.iOS/AuthenticationPageRenderer.cs" Line="22" Column="38" />
+      <File FileName="NPhotos/NPhotos/Services/GoogleServices.cs" Line="40" Column="31" />
+      <File FileName="NPhotos/NPhotos/Views/GoogleProfileCsPage.cs" Line="33" Column="46" />
+      <File FileName="NPhotos/NPhotos/ViewModels/HomePageViewModel.cs" Line="9" Column="1" />
+      <File FileName="NPhotos/NPhotos.Android/CustomUrlSchemeInterceptorActivity.cs" Line="35" Column="62" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.NPhotos.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DD955F6F-E1B4-4DEF-8CCD-E826AD7CD2CE" automaticSigning="False" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.NPhotos.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+</Properties>

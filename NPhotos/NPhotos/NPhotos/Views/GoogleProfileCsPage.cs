@@ -20,17 +20,17 @@ namespace NPhotos.Views
 
             BindingContext = _googleViewModel;
 
-            Title = "Google Profile";
+            Title = "Google Profile New";
             BackgroundColor = Color.White;
             store = AccountStore.Create();
             account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
          
             var authenticator = new OAuth2Authenticator(
-                Constants.AndroidClientId,
+                Constants.AndroidClientId, //Constants.AndroidClientId,
                 null,
                 Constants.Scope,
                 new Uri(Constants.AuthorizeUrl),
-                new Uri(Constants.AndroidRedirectUrl),
+                new Uri(Constants.AndroidRedirectUrl), //(Constants.AndroidRedirectUrl)
                 new Uri(Constants.AccessTokenUrl),
                 null,
                 true);

@@ -6,7 +6,6 @@ namespace NPhotos.ViewModels
 	{
         public HomePageViewModel(INavigationService navigationService) :base(navigationService)
         {
-
         }
 	}
 }
