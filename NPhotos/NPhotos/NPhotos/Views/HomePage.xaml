@@ -5,6 +5,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              NavigationPage.HasNavigationBar="False"
              x:Class="NPhotos.Views.HomePage">
+
     <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="200"
                      BackgroundColor="{StaticResource colorBlue}">
@@ -13,9 +14,20 @@
         <Frame Margin="40,0,40,0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="10" BackgroundColor="{StaticResource colorBlue}">
             <StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" >
                 <Image Source="gmail" HorizontalOptions="Start" Margin="5,0,0,5" VerticalOptions="Center"/>
-                <Label Text="Pick Photo From Galary" VerticalOptions="CenterAndExpand" TextColor="{StaticResource colorWhite}" FontSize="16" FontAttributes="Bold"/>
+                <Label x:Name="Name" Text="Pick Photo From Galary" VerticalOptions="CenterAndExpand" TextColor="{StaticResource colorWhite}" FontSize="16" FontAttributes="Bold"/>
             </StackLayout>
-           
+           <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SELECT_PICTURE"/>
+            </Frame.GestureRecognizers>
         </Frame>
+
     </StackLayout>
+
+    <!--<ListView x:Name="AlbumView" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding title}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
 </ContentPage>

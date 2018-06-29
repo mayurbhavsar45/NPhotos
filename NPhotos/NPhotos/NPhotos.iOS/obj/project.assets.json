@@ -83,7 +83,7 @@
           "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
         }
       },
-      "Unity/5.5.5": {
+      "Unity/5.8.6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/CommonServiceLocator.dll": {},
@@ -108,6 +108,60 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
+        }
+      },
+      "Xamarin.Build.Download/0.4.6": {
+        "type": "package",
+        "build": {
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Core.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
         }
       },
       "Xamarin.Forms/3.1.0.583944": {
@@ -231,6 +285,24 @@
         "build": {
           "build/netstandard2.0/Xamarin.Forms.props": {},
           "build/netstandard2.0/Xamarin.Forms.targets": {}
+        }
+      },
+      "Xamarin.Google.iOS.SignIn/4.1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Analytics": "4.0.5.1",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Google.iOS.SignIn.targets": {}
         }
       },
       "NPhotos/1.0.0": {
@@ -332,7 +404,7 @@
           "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
         }
       },
-      "Unity/5.5.5": {
+      "Unity/5.8.6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/CommonServiceLocator.dll": {},
@@ -357,6 +429,60 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
+        }
+      },
+      "Xamarin.Build.Download/0.4.6": {
+        "type": "package",
+        "build": {
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Core.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
         }
       },
       "Xamarin.Forms/3.1.0.583944": {
@@ -480,6 +606,24 @@
         "build": {
           "build/netstandard2.0/Xamarin.Forms.props": {},
           "build/netstandard2.0/Xamarin.Forms.targets": {}
+        }
+      },
+      "Xamarin.Google.iOS.SignIn/4.1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Analytics": "4.0.5.1",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Google.iOS.SignIn.targets": {}
         }
       },
       "NPhotos/1.0.0": {
@@ -581,7 +725,7 @@
           "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
         }
       },
-      "Unity/5.5.5": {
+      "Unity/5.8.6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/CommonServiceLocator.dll": {},
@@ -606,6 +750,60 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
+        }
+      },
+      "Xamarin.Build.Download/0.4.6": {
+        "type": "package",
+        "build": {
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Core.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
         }
       },
       "Xamarin.Forms/3.1.0.583944": {
@@ -729,6 +927,24 @@
         "build": {
           "build/netstandard2.0/Xamarin.Forms.props": {},
           "build/netstandard2.0/Xamarin.Forms.targets": {}
+        }
+      },
+      "Xamarin.Google.iOS.SignIn/4.1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Analytics": "4.0.5.1",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Google.iOS.SignIn.targets": {}
         }
       },
       "NPhotos/1.0.0": {
@@ -830,7 +1046,7 @@
           "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
         }
       },
-      "Unity/5.5.5": {
+      "Unity/5.8.6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/CommonServiceLocator.dll": {},
@@ -855,6 +1071,60 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
+        }
+      },
+      "Xamarin.Build.Download/0.4.6": {
+        "type": "package",
+        "build": {
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Analytics.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Analytics.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.Core.targets": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Firebase.InstanceID.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Firebase.iOS.InstanceID.targets": {}
         }
       },
       "Xamarin.Forms/3.1.0.583944": {
@@ -978,6 +1248,24 @@
         "build": {
           "build/netstandard2.0/Xamarin.Forms.props": {},
           "build/netstandard2.0/Xamarin.Forms.targets": {}
+        }
+      },
+      "Xamarin.Google.iOS.SignIn/4.1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.4.6",
+          "Xamarin.Firebase.iOS.Analytics": "4.0.5.1",
+          "Xamarin.Firebase.iOS.Core": "4.0.13.1",
+          "Xamarin.Firebase.iOS.InstanceID": "2.0.8"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Google.SignIn.dll": {}
+        },
+        "build": {
+          "build/Xamarin.Google.iOS.SignIn.targets": {}
         }
       },
       "NPhotos/1.0.0": {
@@ -1255,10 +1543,10 @@
         "prism.unity.forms.nuspec"
       ]
     },
-    "Unity/5.5.5": {
-      "sha512": "kg101Re8N7rzTro2G5n6k9j15MpuRQQ+4MjmDY36RL/ewCa93f2ZOp8Mayl6Ou0d/AGf9YVEK4r7uCpNV6fczQ==",
+    "Unity/5.8.6": {
+      "sha512": "QEVj2UjwIMBhhhzxBsvfbpHmjPFWsK7NMd4/FniI6GTF0+0/bILEKyGmPe+J9FRIktV1X/Tf8cnhUMVwBunU3A==",
       "type": "package",
-      "path": "unity/5.5.5",
+      "path": "unity/5.8.6",
       "files": [
         "lib/net40/CommonServiceLocator.dll",
         "lib/net40/CommonServiceLocator.pdb",
@@ -1286,6 +1574,22 @@
         "lib/net45/Unity.RegistrationByConvention.pdb",
         "lib/net45/Unity.ServiceLocation.dll",
         "lib/net45/Unity.ServiceLocation.pdb",
+        "lib/net46/CommonServiceLocator.dll",
+        "lib/net46/CommonServiceLocator.pdb",
+        "lib/net46/Unity.Abstractions.dll",
+        "lib/net46/Unity.Abstractions.pdb",
+        "lib/net46/Unity.Configuration.dll",
+        "lib/net46/Unity.Configuration.pdb",
+        "lib/net46/Unity.Container.dll",
+        "lib/net46/Unity.Container.pdb",
+        "lib/net46/Unity.Interception.Configuration.dll",
+        "lib/net46/Unity.Interception.Configuration.pdb",
+        "lib/net46/Unity.Interception.dll",
+        "lib/net46/Unity.Interception.pdb",
+        "lib/net46/Unity.RegistrationByConvention.dll",
+        "lib/net46/Unity.RegistrationByConvention.pdb",
+        "lib/net46/Unity.ServiceLocation.dll",
+        "lib/net46/Unity.ServiceLocation.pdb",
         "lib/net47/CommonServiceLocator.dll",
         "lib/net47/CommonServiceLocator.pdb",
         "lib/net47/Unity.Abstractions.dll",
@@ -1314,6 +1618,11 @@
         "lib/netcoreapp1.0/Unity.ServiceLocation.deps.json",
         "lib/netcoreapp1.0/Unity.ServiceLocation.dll",
         "lib/netcoreapp1.0/Unity.ServiceLocation.pdb",
+        "lib/netcoreapp2.0/Unity.Abstractions.dll",
+        "lib/netcoreapp2.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp2.0/Unity.Container.deps.json",
+        "lib/netcoreapp2.0/Unity.Container.dll",
+        "lib/netcoreapp2.0/Unity.Container.pdb",
         "lib/netstandard1.0/CommonServiceLocator.deps.json",
         "lib/netstandard1.0/CommonServiceLocator.dll",
         "lib/netstandard1.0/CommonServiceLocator.pdb",
@@ -1338,7 +1647,7 @@
         "lib/netstandard2.0/Unity.ServiceLocation.deps.json",
         "lib/netstandard2.0/Unity.ServiceLocation.dll",
         "lib/netstandard2.0/Unity.ServiceLocation.pdb",
-        "unity.5.5.5.nupkg.sha512",
+        "unity.5.8.6.nupkg.sha512",
         "unity.nuspec"
       ]
     },
@@ -1368,6 +1677,56 @@
         "lib/wpa81/Xamarin.Auth/Xamarin.Auth.xr.xml",
         "xamarin.auth.1.6.0.2.nupkg.sha512",
         "xamarin.auth.nuspec"
+      ]
+    },
+    "Xamarin.Build.Download/0.4.6": {
+      "sha512": "MCcNQa7gHQVYDzt6YKSrAjOBNqgb3JQYZDPubtWk2s/eV4eUBicuxZczchcvuk2+US3AOuyFxIcMwnej74dWaA==",
+      "type": "package",
+      "path": "xamarin.build.download/0.4.6",
+      "files": [
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Mono.Cecil.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/System.Net.Http.Formatting.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.4.6.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.Analytics/4.0.5.1": {
+      "sha512": "J5jdcGTo+VqxyigDpvU6mWyae8yFN+wpC1Tet3mBS9Wb0oQpYuP9j5Ia05/3IJEO2gX70Pd12p0Qe70lU8hPBQ==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.analytics/4.0.5.1",
+      "files": [
+        "build/Xamarin.Firebase.iOS.Analytics.targets",
+        "lib/Xamarin.iOS10/Firebase.Analytics.dll",
+        "xamarin.firebase.ios.analytics.4.0.5.1.nupkg.sha512",
+        "xamarin.firebase.ios.analytics.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.Core/4.0.13.1": {
+      "sha512": "Qp2LASB6UeFT/cAEsdMrUkGqlB9rhe10mY9/xqRe38UWHXoG7uvgtDQsJI2kHMg5uazgRSFZnt0SzHd7yPmlUA==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.core/4.0.13.1",
+      "files": [
+        "THIRD-PARTY-NOTICES",
+        "build/Xamarin.Firebase.iOS.Core.targets",
+        "lib/Xamarin.iOS10/Firebase.Core.dll",
+        "xamarin.firebase.ios.core.4.0.13.1.nupkg.sha512",
+        "xamarin.firebase.ios.core.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.InstanceID/2.0.8": {
+      "sha512": "SGG0uH5WDSIjLUhm/qV5dIKsqScffR45PpKNYl5vnXlrdPkiP9xDQK1CBWU1zBFc+orGPMUy+nBctileV9jRQg==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.instanceid/2.0.8",
+      "files": [
+        "build/Xamarin.Firebase.iOS.InstanceID.targets",
+        "lib/Xamarin.iOS10/Firebase.InstanceID.dll",
+        "xamarin.firebase.ios.instanceid.2.0.8.nupkg.sha512",
+        "xamarin.firebase.ios.instanceid.nuspec"
       ]
     },
     "Xamarin.Forms/3.1.0.583944": {
@@ -1521,6 +1880,17 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Google.iOS.SignIn/4.1.1.1": {
+      "sha512": "iMeuKky/UsBFQwkKXrRQpu/0vJU7I6WZIb0HaDZbNYd+vGosljtDEeAn/owAMH2dhRVDbX8NEFkB/Pi0gmyfpQ==",
+      "type": "package",
+      "path": "xamarin.google.ios.signin/4.1.1.1",
+      "files": [
+        "build/Xamarin.Google.iOS.SignIn.targets",
+        "lib/Xamarin.iOS10/Google.SignIn.dll",
+        "xamarin.google.ios.signin.4.1.1.1.nupkg.sha512",
+        "xamarin.google.ios.signin.nuspec"
+      ]
+    },
     "NPhotos/1.0.0": {
       "type": "project",
       "path": "../NPhotos/NPhotos.csproj",
@@ -1530,8 +1900,12 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "NPhotos >= 1.0.0",
+      "Prism.Core >= 7.0.0.396",
+      "Prism.Forms >= 7.0.0.396",
       "Prism.Unity.Forms >= 7.0.0.396",
-      "Xamarin.Forms >= 3.1.0.583944"
+      "Unity >= 5.8.6",
+      "Xamarin.Forms >= 3.1.0.583944",
+      "Xamarin.Google.iOS.SignIn >= 4.1.1.1"
     ]
   },
   "packageFolders": {
@@ -1565,18 +1939,32 @@
         }
       }
     },
-    "dependencies": {
-      "Prism.Unity.Forms": {
-        "target": "Package",
-        "version": "[7.0.0.396, )"
-      }
-    },
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
           "Xamarin.Forms": {
             "target": "Package",
             "version": "3.1.0.583944"
+          },
+          "Prism.Unity.Forms": {
+            "target": "Package",
+            "version": "7.0.0.396"
+          },
+          "Unity": {
+            "target": "Package",
+            "version": "5.8.6"
+          },
+          "Prism.Forms": {
+            "target": "Package",
+            "version": "7.0.0.396"
+          },
+          "Prism.Core": {
+            "target": "Package",
+            "version": "7.0.0.396"
+          },
+          "Xamarin.Google.iOS.SignIn": {
+            "target": "Package",
+            "version": "4.1.1.1"
           }
         }
       }

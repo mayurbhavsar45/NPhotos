@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using NPhotos.Models;
+using Prism.Navigation;
 
 namespace NPhotos.ViewModels
 {

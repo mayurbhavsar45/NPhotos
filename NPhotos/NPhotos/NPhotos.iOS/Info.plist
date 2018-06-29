@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>NPhotos</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.appname</string>
+	<string>com.companyname.iOS-NPhotos</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
@@ -55,11 +55,15 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.33147413996-1v68mj9nlssj7seoqdqf40v81rbffare</string>
+				<string>com.googleusercontent.apps.33147413996-oev6i9n6qpses2tecmmch2srcag92bug</string>
 			</array>
 			<key>CFBundleURLTypes</key>
-			<string>Editor</string>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>Xamarin.Auth Google OAuth</string>
 		</dict>
 	</array>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
 </dict>
 </plist>

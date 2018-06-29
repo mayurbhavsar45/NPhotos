@@ -1,5 +1,6 @@
 ﻿using NPhotos.Models;
 using NPhotos.Services;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,13 +31,13 @@ namespace NPhotos.ViewModels
             _googleServices = new GoogleServices();
         }
 
-        public async Task<string> GetAccessTokenAsync(string code)
-        {
+        //public async Task<string> GetAccessTokenAsync(string code)
+        //{
 
-            var accessToken = await _googleServices.GetAccessTokenAsync(code);
+        //    var accessToken = await _googleServices.GetAccessTokenAsync(code);
 
-            return accessToken;
-        }
+        //    return accessToken;
+        //}
 
         public async Task SetGoogleUserProfileAsync(string accessToken)
         {

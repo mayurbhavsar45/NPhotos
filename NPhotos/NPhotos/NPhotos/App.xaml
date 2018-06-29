@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
@@ -10,7 +10,7 @@
             <Color x:Key="colorBlack">#000000</Color>
             <Color x:Key="colorBlue">#2c3e80</Color>
             <Color x:Key="colorBlueDark">#2C4084</Color>
-            <Color x:Key="colorOrange">#f49527</Color>
+            <Color x:Key="colorOrange">#DB402C</Color>
             <Color x:Key="colorDarkGray">#4c4c4c</Color>
             <Color x:Key="colorDarkLightGray">#4a4a4a</Color>
             <Color x:Key="colorGray">#999999</Color>

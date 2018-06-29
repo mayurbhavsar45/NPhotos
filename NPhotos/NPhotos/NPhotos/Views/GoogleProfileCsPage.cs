@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NPhotos.Helper;
 using NPhotos.Models;
 using NPhotos.ViewModels;
@@ -10,13 +11,28 @@ using Xamarin.Forms;
 
 namespace NPhotos.Views
 {
-    public class GoogleProfileCsPage : ContentPage
+    public partial class GoogleProfileCsPage : ContentPage
 	{
         Account account;
         AccountStore store;
         private readonly GoogleViewModel _googleViewModel = new GoogleViewModel();
         public GoogleProfileCsPage ()
 		{
+            string clientId = null;
+            string redirectUri = null;
+
+            switch(Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    clientId = Constants.iOSClientId;
+                    redirectUri = Constants.iOSRedirectUrl;
+                    break;
+                case Device.Android:
+                    clientId = Constants.AndroidClientId;
+                    redirectUri = Constants.AndroidRedirectUrl;
+                    break;
+            }
+
 
             BindingContext = _googleViewModel;
 
@@ -26,11 +42,11 @@ namespace NPhotos.Views
             account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();
          
             var authenticator = new OAuth2Authenticator(
-                Constants.AndroidClientId, //Constants.AndroidClientId,
+                clientId, //Constants.AndroidClientId,
                 null,
                 Constants.Scope,
                 new Uri(Constants.AuthorizeUrl),
-                new Uri(Constants.AndroidRedirectUrl), //(Constants.AndroidRedirectUrl)
+                new Uri(redirectUri), //(Constants.AndroidRedirectUrl)
                 new Uri(Constants.AccessTokenUrl),
                 null,
                 true);
@@ -44,10 +60,6 @@ namespace NPhotos.Views
             presenter.Login(authenticator);
         }
 
-        private void OnAuthError(object sender, AuthenticatorErrorEventArgs e)
-        {
-            //throw new NotImplementedException();
-        }
 
         private async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
         {
@@ -58,12 +70,13 @@ namespace NPhotos.Views
                 authenticator.Error -= OnAuthError;
             }
 
-            User user = null;
+            //User user = null;
             if (e.IsAuthenticated)
             {
                
                 // If the user is authenticated, request their basic user data from Google
                 // UserInfoUrl = https://www.googleapis.com/oauth2/v2/userinfo
+
                 var request = new OAuth2Request("GET", new Uri(Constants.UserInfoUrl), null, e.Account);
                 var response = await request.GetResponseAsync();
                 if (response != null)
@@ -72,10 +85,10 @@ namespace NPhotos.Views
                     TokenResponse.token_type = e.Account.Properties["token_type"];
                     TokenResponse.expires_in = e.Account.Properties["expires_in"];
                     TokenResponse.refresh_token = e.Account.Properties["refresh_token"];
-                    TokenResponse.id_token = e.Account.Properties["id_token"];
+                    //TokenResponse.id_token = e.Account.Properties["id_token"];
 
                     string userJson = await response.GetResponseTextAsync();
-                    user = JsonConvert.DeserializeObject<User>(userJson);           
+                    var user = JsonConvert.DeserializeObject<JObject>(userJson);           
                 }
 
                 if (account != null)
@@ -84,11 +97,24 @@ namespace NPhotos.Views
                 }
          
                 await store.SaveAsync(account = e.Account, Constants.AppName);
-                NavigationPage navigationPage = new NavigationPage();
-                await navigationPage.PushAsync(new HomePage());
+
+                //await DisplayAlert("Email Address", user.Email, "OK");
+                //NavigationPage navigationPage = new NavigationPage();
+                await Navigation.PushAsync(new HomePage());
+                Navigation.RemovePage(this);
             }
         }
 
-      
+        private void OnAuthError(object sender, AuthenticatorErrorEventArgs e)
+        {
+            var authenticator = sender as OAuth2Authenticator;
+            if (authenticator != null)
+            {
+                authenticator.Completed -= OnAuthCompleted;
+                authenticator.Error -= OnAuthError;
+            }
+            DisplayAlert("Authentication error", e.Message, "OK");
+        }
+
     }
 }

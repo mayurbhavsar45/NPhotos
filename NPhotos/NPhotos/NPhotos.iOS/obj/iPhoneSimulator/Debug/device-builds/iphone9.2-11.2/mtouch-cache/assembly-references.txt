@@ -35,6 +35,6 @@
 /Users/ns-mac/Divyesh/Projects/2018/Xamarin.Forms/NPhotos/NPhotos/NPhotos/NPhotos/bin/Debug/netstandard2.0/NPhotos.dll
 /Users/ns-mac/.nuget/packages/xamarin.forms/3.1.0.583944/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
 /Users/ns-mac/.nuget/packages/prism.unity.forms/7.0.0.396/lib/netstandard2.0/Prism.Unity.Forms.dll
-/Users/ns-mac/.nuget/packages/unity/5.5.5/lib/netstandard2.0/Unity.Abstractions.dll
-/Users/ns-mac/.nuget/packages/unity/5.5.5/lib/netstandard2.0/Unity.Container.dll
+/Users/ns-mac/.nuget/packages/unity/5.8.6/lib/netstandard2.0/Unity.Abstractions.dll
+/Users/ns-mac/.nuget/packages/unity/5.8.6/lib/netstandard2.0/Unity.Container.dll
 /Users/ns-mac/.nuget/packages/newtonsoft.json/8.0.3/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll
